@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rune Clash — a duel of Ember, Tide &amp; Thorn</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div id="app">
+
+  <section id="title-screen" class="screen">
+    <h1>RUNE CLASH</h1>
+    <p class="tagline">A duel of Ember, Tide &amp; Thorn</p>
+    <div class="triangle">
+      <span class="el-chip"><span class="el-icon el-ember"><svg viewBox="0 0 24 24"><path d="M12 2 C13 6 17 8 17 13 a5 5 0 0 1 -10 0 C7 9 9 7 10 5 C10.5 6.5 11 7 12 7 C11.5 5 11.5 3.5 12 2 Z" fill="currentColor"/></svg></span>Ember beats Thorn</span>
+      <span class="el-chip"><span class="el-icon el-thorn"><svg viewBox="0 0 24 24"><path d="M12 2 C17 6 19 10 19 14 a7 7 0 0 1 -14 0 C5 10 7 6 12 2 Z M12 22 V10" fill="currentColor"/></svg></span>Thorn beats Tide</span>
+      <span class="el-chip"><span class="el-icon el-tide"><svg viewBox="0 0 24 24"><path d="M2 14 c3 -3 5 3 8 0 s5 3 8 0 s4 -2 4 -2 v4 H2 Z M2 19 c3 -3 5 3 8 0 s5 3 8 0 s4 -2 4 -2 v3 H2 Z" fill="currentColor"/></svg></span>Tide beats Ember</span>
+    </div>
+    <div class="rules">
+      You and Mira, Tidecaller, start at 20 health. Each turn you draw a card and
+      your mana refills — spend it to summon creatures or cast spells. Creatures
+      attack once a turn: into her creatures, or straight at her. A creature whose
+      element beats its target's deals +1 damage. Reduce Mira to 0 health to win.
+      Click a card to play it, click your creature then a target to attack.
+      Space ends your turn, Esc cancels.
+    </div>
+    <button id="play-button" type="button">Play the duel</button>
+  </section>
+
+  <section id="game-screen" class="screen hidden">
+    <div id="ai-area" class="hero-area">
+      <div class="hero-info"><span class="avatar">M</span><span class="hero-name" id="ai-name">Mira, Tidecaller</span></div>
+      <div class="hp-bar" id="ai-hp"></div>
+      <div id="ai-mana"></div>
+      <span id="ai-hand-count"></span>
+    </div>
+    <div id="ai-board" class="board-row"></div>
+    <div id="mid-row"><span id="status-line"></span><span id="round-label"></span></div>
+    <div id="player-board" class="board-row"></div>
+    <div id="player-area" class="hero-area">
+      <div class="hero-info"><span class="avatar">Y</span><span class="hero-name">You</span></div>
+      <div class="hp-bar" id="player-hp"></div>
+      <div id="player-mana"></div>
+      <button id="end-turn" type="button">End Turn</button>
+    </div>
+    <div id="player-hand"></div>
+    <div id="log"></div>
+  </section>
+
+  <section id="end-screen" class="screen hidden">
+    <h1 id="end-title"></h1>
+    <p id="end-stats"></p>
+    <button id="again-button" type="button">Play again</button>
+  </section>
+
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
